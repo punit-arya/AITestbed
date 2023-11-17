@@ -1,4 +1,5 @@
 import tensorflow as tf
+import matplotlib.pyplot as mp
 
 def main():
 	string = tf.Variable("this is a string", tf.string)
@@ -61,6 +62,15 @@ def main():
 	print("var11: ", var11)
 	print("rank(var11): ", tf.rank(var11))
 	print("var11.shape: ", var11.shape)
+
+	mp.grid(True, 'both')
+	x = list(range(0, 10))
+	y1 = [i ** 2 + i + 1 for i in x]
+	y2 = [i ** 2 + 2 * i + 1 for i in x]
+	y3 = [i ** 2 + 3 * i + 1 for i in x]
+	y4 = [i ** 2 + 5 * i + 1 for i in x]
+	mp.plot(x, y1, 'o-r', x, y2, 's-g', x, y3, '^-b', x, y4, 'p-c')
+	mp.show()
 
 if __name__ == '__main__':
 	main()
